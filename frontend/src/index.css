@@ -126,3 +126,33 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* Priority Highlighting Classes - Support Variable Intensity */
+.priority-red { background-color: rgba(239, 68, 68, var(--row-opacity, 0.15)) !important; }
+.priority-yellow { background-color: rgba(245, 158, 11, var(--row-opacity, 0.15)) !important; }
+.priority-green { background-color: rgba(16, 185, 129, var(--row-opacity, 0.15)) !important; }
+.priority-blue { background-color: rgba(59, 130, 246, var(--row-opacity, 0.15)) !important; }
+.priority-indigo { background-color: rgba(99, 102, 241, var(--row-opacity, 0.15)) !important; }
+.priority-purple { background-color: rgba(139, 92, 246, var(--row-opacity, 0.15)) !important; }
+
+/* Table row specific indicators - Stronger borders */
+tr.priority-red { border-left: 6px solid #ef4444 !important; }
+tr.priority-yellow { border-left: 6px solid #f59e0b !important; }
+tr.priority-green { border-left: 6px solid #10b981 !important; }
+tr.priority-blue { border-left: 6px solid #3b82f6 !important; }
+tr.priority-indigo { border-left: 6px solid #6366f1 !important; }
+tr.priority-purple { border-left: 6px solid #8b5cf6 !important; }
+
+/* Table cell adjustments for priority rows */
+tr[class*="priority-"] td {
+  background-color: transparent !important;
+  font-weight: 500; /* Slightly bolder text for visibility */
+}
+
+/* Maintain hover effect with even more intensity */
+tr.priority-red:hover { background-color: #fecaca !important; }
+tr.priority-yellow:hover { background-color: #fde68a !important; }
+tr.priority-green:hover { background-color: #bbf7d0 !important; }
+tr.priority-blue:hover { background-color: #bfdbfe !important; }
+tr.priority-indigo:hover { background-color: #c7d2fe !important; }
+tr.priority-purple:hover { background-color: #e9d5ff !important; }

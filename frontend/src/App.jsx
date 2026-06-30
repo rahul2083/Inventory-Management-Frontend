@@ -1,11 +1,11 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Models from './components/Models';
 
-const Login = lazy(() => import('./components/Login'));
-const Signup = lazy(() => import('./components/Signup'));
+const Login = lazy(() => import('./components/auth/Login'));
+const Models = lazy(() => import('./components/models/Models'));
+const Signup = lazy(() => import('./components/auth/Signup'));
 const AdminLayout = lazy(() => import('./components/AdminLayout'));
-const HelpChatWindow = lazy(() => import('./components/HelpChatWindow'));
+const HelpChatWindow = lazy(() => import('./components/help/HelpChatWindow'));
 
 const appLoader = (
   <div className="min-h-screen bg-slate-50 flex items-center justify-center">
@@ -21,7 +21,7 @@ export default function App() {
       <Suspense fallback={appLoader}>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} /> 
+          <Route path="/signup" element={<Signup />} />
           <Route path="/*" element={<AdminLayout />} />
         </Routes>
       </Suspense>

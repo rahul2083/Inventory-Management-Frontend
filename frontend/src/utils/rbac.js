@@ -21,6 +21,9 @@ export const MODULE_PERMISSIONS = {
   installations: { view: ["Admin", "Supervisor", "User", "Operator"], manage: ["Admin", "User", "Operator"] },
   returns: { view: ["Admin", "Supervisor", "User", "Operator"], manage: ["Admin", "User", "Operator"] },
   damaged: { view: ["Admin", "Supervisor", "User", "Operator"], manage: ["Admin", "User", "Operator"] },
+  godownMaster: { view: ["Admin", "Supervisor", "User", "Operator"], manage: ["Admin", "Supervisor", "User", "Operator"] },
+  fbfFbaMaster: { view: ["Admin"], manage: ["Admin"] },
+  fbfFbaManagement: { view: ["Admin", "Supervisor", "Operator"], manage: ["Admin", "Supervisor", "Operator"] },
   reports: { view: ["Admin", "Supervisor", "Accountant"], manage: ["Admin", "Accountant"] },
 };
 

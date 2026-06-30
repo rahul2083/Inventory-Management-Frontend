@@ -1,10 +1,26 @@
 import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
 export default defineConfig({
+  root: '.',
   plugins: [react(), tailwindcss()],
+  resolve: {
+    preserveSymlinks: true,
+  },
+
+  // Dev server: proxy all backend routes so VITE_API_URL can be empty locally
+  server: {
+    port: 5173,
+    strictPort: true,
+    proxy: {
+      '/api': { target: 'http://localhost:5001', changeOrigin: true },
+      '/Inventory': { target: 'http://localhost:5001', changeOrigin: true },
+      '/uploads': { target: 'http://localhost:5001', changeOrigin: true },
+      '/health': { target: 'http://localhost:5001', changeOrigin: true },
+    },
+  },
+
   build: {
     rollupOptions: {
       output: {
